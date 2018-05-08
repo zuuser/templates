@@ -236,7 +236,7 @@
     },
     "deployAmbariServerScriptURI": {
       "type": "string",
-      "defaultValue": "https://github.com/zuuser/templates/blob/master/deploy-ambari-centos-6.8.sh",
+      "defaultValue": "https://raw.githubusercontent.com/zuuser/templates/master/deploy-ambari-centos-6.8.sh",
       "metadata": {
         "description": "The URI of the Ambari Server Deployment Script."
       }
@@ -257,21 +257,21 @@
     },
     "deployAmbariVMTemplateURI": {
       "type": "string",
-      "defaultValue": "https://github.com/zuuser/templates/blob/master/deployAmbariVM.json",
+      "defaultValue": "https://raw.githubusercontent.com/zuuser/templates/master/deployAmbariVM.json",
       "metadata": {
         "description": "The location of the deployAmbariVM.json ARM Template File."
       }
     },
     "deployHadoopVMTemplateURI": {
       "type": "string",
-      "defaultValue": "https://github.com/zuuser/templates/blob/master/deployHadoopVMs.json",
+      "defaultValue": "https://raw.githubusercontent.com/zuuser/templates/master/deployHadoopVMs.json",
       "metadata": {
         "description": "The location of the deployHadoopVMs.json ARM Template File."
       }
     },
     "deployAmbariServerTemplateURI": {
       "type": "string",
-      "defaultValue": "https://github.com/zuuser/templates/blob/master/deployAmbariServer.json",
+      "defaultValue": "https://raw.githubusercontent.com/zuuser/templates/master/deployAmbariServer.json",
       "metadata": {
         "description": "The location of the deployAmbariServer.json ARM Template File."
       }

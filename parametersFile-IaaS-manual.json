@@ -75,7 +75,7 @@
       "value": "Standard_DS2_v2"
     },
     "deployAmbariServerScriptURI": {
-      "value": "deploy-ambari-centos-6.8.sh"
+      "value": "https://github.com/zuuser/templates/blob/master/deploy-ambari-centos-6.8.sh"
     },
     "deployAmbariServerScriptName": {
       "value": "deploy-ambari-centos-6.8.sh"
@@ -84,13 +84,13 @@
       "value": "[concat(resourceGroup().location, '.cloudapp.azure.com')]"
     },
     "deployAmbariVMTemplateURI": {
-      "value": "deployAmbariVM.json"
+      "value": "https://github.com/zuuser/templates/blob/master/deployAmbariVM.json"
     },
     "deployHadoopVMTemplateURI": {
-      "value": "deployHadoopVMs.json"
+      "value": "https://github.com/zuuser/templates/blob/master/deployHadoopVMs.json"
     },
     "deployAmbariServerTemplateURI": {
-      "value": "deployAmbariServer.json"
+      "value": "https://github.com/zuuser/templates/blob/master/deployAmbariServer.json"
     },
     "apiVersion": {
       "value": "2015-06-15"

@@ -226,6 +226,7 @@
       "allowedValues": [
         "Standard_A0",
         "Standard_A1",
+		"Standard_A8_v2",
         "Standard_DS1_v2",
         "Standard_DS2_v2",
         "Standard_DS3_v2",

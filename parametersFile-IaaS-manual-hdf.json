@@ -1,0 +1,99 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "clientID": {
+      "value": "zu"
+    },
+    "primaryAddressPrefix": {
+      "value": "10.0.0.0/16"
+    },
+    "subnetPrefix": {
+      "value": "10.0.1.0/24"
+    },
+    "ambariServerNicIPAddress": {
+      "value": "10.0.1.4"
+    },
+    "ambariServerStorageType": {
+      "value": "Premium_LRS"
+    },
+    "ambariServerAdminUsername": {
+      "value": "zuadmin"
+    },
+    "ambariServerAdminPassword": {
+      "value": "DataMein1@#$"
+    },
+    "ambariServerImagePublisher": {
+      "value": "OpenLogic"
+    },
+    "ambariServerImageOffer": {
+      "value": "CentOS"
+    },
+    "ambariServerImageSku": {
+      "value": "6.6"
+    },
+    "ambariServerImageVersion": {
+      "value": "latest"
+    },
+    "ambariServerDataDiskSize": {
+      "value": 50
+    },
+    "ambariServerVMSize": {
+      "value": "Standard_DS2_v2"
+    },
+    "indexValue": {
+      "value": null
+    },
+    "hadoopServerInstances": {
+      "value": 2
+    },
+    "hadoopServerStorageAccountType": {
+      "value": "Premium_LRS"
+    },
+    "hadoopServerAdminUsername": {
+      "value": "zuadmin"
+    },
+    "hadoopServerAdminPassword": {
+      "value": "DataMein1@#$"
+    },
+    "hadoopServerImagePublisher": {
+      "value": "OpenLogic"
+    },
+    "hadoopServerImageOffer": {
+      "value": "CentOS"
+    },
+    "hadoopServerImageSku": {
+      "value": "6.6"
+    },
+    "hadoopServerImageVersion": {
+      "value": "latest"
+    },
+    "hadoopServerDataDiskSize": {
+      "value": 50
+    },
+    "hadoopServerVMSize": {
+      "value": "Standard_DS2_v2"
+    },
+    "deployAmbariServerScriptURI": {
+      "value": "https://raw.githubusercontent.com/zuuser/templates/master/deploy-ambari-centos-6.8-hdf.sh"
+    },
+    "deployAmbariServerScriptName": {
+      "value": "deploy-ambari-centos-6.8-hdf.sh"
+    },
+    "domainName": {
+      "value": "[concat(resourceGroup().location, '.cloudapp.azure.com')]"
+    },
+    "deployAmbariVMTemplateURI": {
+      "value": "https://raw.githubusercontent.com/zuuser/templates/master/deployAmbariVM.json"
+    },
+    "deployHadoopVMTemplateURI": {
+      "value": "https://raw.githubusercontent.com/zuuser/templates/master/deployHadoopVMs.json"
+    },
+    "deployAmbariServerTemplateURI": {
+      "value": "https://raw.githubusercontent.com/zuuser/templates/master/deployAmbariServer.json"
+    },
+    "apiVersion": {
+      "value": "2015-06-15"
+    }
+  }
+}

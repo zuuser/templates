@@ -243,7 +243,7 @@
     },
     "deployAmbariServerScriptName": {
       "type": "string",
-      "defaultValue": "deploy-ambari-centos-6.8.sh",
+      "defaultValue": "deploy-ambari-centos-hdf-6.8.sh",
       "metadata": {
         "description": "The Name of the Ambari Server Deployment Script."
       }

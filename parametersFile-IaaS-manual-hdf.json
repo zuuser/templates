@@ -84,7 +84,7 @@
       "value": "[concat(resourceGroup().location, '.cloudapp.azure.com')]"
     },
     "deployAmbariVMTemplateURI": {
-      "value": "https://raw.githubusercontent.com/zuuser/templates/master/deployAmbariVM.json"
+      "value": "https://raw.githubusercontent.com/zuuser/templates/master/deployAmbariVM-hdf.json"
     },
     "deployHadoopVMTemplateURI": {
       "value": "https://raw.githubusercontent.com/zuuser/templates/master/deployHadoopVMs.json"

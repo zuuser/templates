@@ -132,17 +132,14 @@ yum install expect -y
 # Downloading the Ambari repository file.
 wget -nv http://public-repo-1.hortonworks.com/ambari/centos6/2.x/updates/2.6.1.0/ambari.repo -O /etc/yum.repos.d/ambari.repo
 
-
 # Installing Ambari Server.
 yum install ambari-server -y
 
 # Running setup of the Ambari Server.
 ambari-server setup -s
 
-# Starting the Ambari Server.
-ambari-server start
 
-
+#-----------------------------------------
 # HDF-specific
 # Back up the Ambari resources folder
 cp -r /var/lib/ambari-server/resources /var/lib/ambari-server/resources.backup
@@ -150,8 +147,10 @@ cp -r /var/lib/ambari-server/resources /var/lib/ambari-server/resources.backup
 wget -nv http://public-repo-1.hortonworks.com/HDF/centos6/3.x/updates/3.1.1.0/tars/hdf_ambari_mp/hdf-ambari-mpack-3.1.1.0-35.tar.gz -O /tmp/hdf-ambari-mpack-3.1.1.0-35.tar.gz
 # Install
 ambari-server install-mpack --mpack=/tmp/hdf-ambari-mpack-3.1.1.0-35.tar.gz --purge --verbose -y
-# Restart Ambari server
-ambari-server restart
+#-----------------------------------------
+
+# Starting the Ambari Server.
+ambari-server start
 
 
 # Checking if SSH Key already exists.

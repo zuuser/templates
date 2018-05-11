@@ -45,7 +45,7 @@
       "value": null
     },
     "hdfServerInstances": {
-      "value": 3
+      "value": 2
     },
     "hdfServerStorageAccountType": {
       "value": "Premium_LRS"

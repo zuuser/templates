@@ -135,7 +135,7 @@
     },
     "hdfServerInstances": {
       "type": "int",
-      "defaultValue": 3,
+      "defaultValue": 2,
       "metadata": {
         "description": "The number of hdf Server Instances being deployed."
       }

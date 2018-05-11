@@ -294,7 +294,7 @@
               "description": "Allow NiFi traffic through ports 9088, 9090 and 9091.",
               "protocol": "Tcp",
               "sourcePortRange": "*",
-              "destinationPortRange": "9088, 9090, 9091",
+              "destinationPortRange": "9088-9091",
               "sourceAddressPrefix": "*",
               "destinationAddressPrefix": "[concat(parameters('subnetPrefix'))]",
               "access": "Allow",
@@ -303,16 +303,30 @@
             }
           },
 		  {
-            "name": "allow-nifi-registry-inbound",
+            "name": "allow-nifi-registry-http-inbound",
             "properties": {
-              "description": "Allow NiFi registry traffic through ports 61080 and 61443.",
+              "description": "Allow NiFi registry HTTP traffic through ports 61080.",
               "protocol": "Tcp",
               "sourcePortRange": "*",
-              "destinationPortRange": "61080, 61443",
+              "destinationPortRange": "61080",
               "sourceAddressPrefix": "*",
               "destinationAddressPrefix": "[concat(parameters('subnetPrefix'))]",
               "access": "Allow",
               "priority": 131,
+              "direction": "Inbound"
+            }
+          },
+		   {
+            "name": "allow-nifi-registry-https-inbound",
+            "properties": {
+              "description": "Allow NiFi registry HTTPS traffic through ports 61443.",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "61443",
+              "sourceAddressPrefix": "*",
+              "destinationAddressPrefix": "[concat(parameters('subnetPrefix'))]",
+              "access": "Allow",
+              "priority": 132,
               "direction": "Inbound"
             }
           },

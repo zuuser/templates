@@ -305,7 +305,7 @@
 		  {
             "name": "allow-nifi-registry-http-inbound",
             "properties": {
-              "description": "Allow NiFi registry HTTP traffic through ports 61080.",
+              "description": "Allow NiFi registry HTTP traffic through port 61080.",
               "protocol": "Tcp",
               "sourcePortRange": "*",
               "destinationPortRange": "61080",
@@ -319,7 +319,7 @@
 		   {
             "name": "allow-nifi-registry-https-inbound",
             "properties": {
-              "description": "Allow NiFi registry HTTPS traffic through ports 61443.",
+              "description": "Allow NiFi registry HTTPS traffic through port 61443.",
               "protocol": "Tcp",
               "sourcePortRange": "*",
               "destinationPortRange": "61443",

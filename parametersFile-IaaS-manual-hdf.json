@@ -44,34 +44,34 @@
     "indexValue": {
       "value": null
     },
-    "hadoopServerInstances": {
-      "value": 2
+    "hdfServerInstances": {
+      "value": 3
     },
-    "hadoopServerStorageAccountType": {
+    "hdfServerStorageAccountType": {
       "value": "Premium_LRS"
     },
-    "hadoopServerAdminUsername": {
+    "hdfServerAdminUsername": {
       "value": "zuadmin"
     },
-    "hadoopServerAdminPassword": {
+    "hdfServerAdminPassword": {
       "value": "DataMein1@#$"
     },
-    "hadoopServerImagePublisher": {
+    "hdfServerImagePublisher": {
       "value": "OpenLogic"
     },
-    "hadoopServerImageOffer": {
+    "hdfServerImageOffer": {
       "value": "CentOS"
     },
-    "hadoopServerImageSku": {
+    "hdfServerImageSku": {
       "value": "6.6"
     },
-    "hadoopServerImageVersion": {
+    "hdfServerImageVersion": {
       "value": "latest"
     },
-    "hadoopServerDataDiskSize": {
+    "hdfServerDataDiskSize": {
       "value": 50
     },
-    "hadoopServerVMSize": {
+    "hdfServerVMSize": {
       "value": "Standard_DS2_v2"
     },
     "deployAmbariServerScriptURI": {
@@ -86,8 +86,8 @@
     "deployAmbariVMTemplateURI": {
       "value": "https://raw.githubusercontent.com/zuuser/templates/master/deployAmbariVM-hdf.json"
     },
-    "deployHadoopVMTemplateURI": {
-      "value": "https://raw.githubusercontent.com/zuuser/templates/master/deployHadoopVMs.json"
+    "deployhdfVMTemplateURI": {
+      "value": "https://raw.githubusercontent.com/zuuser/templates/master/deployHdfVMs.json"
     },
     "deployAmbariServerTemplateURI": {
       "value": "https://raw.githubusercontent.com/zuuser/templates/master/deployAmbariServer.json"

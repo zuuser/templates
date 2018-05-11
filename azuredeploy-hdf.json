@@ -130,17 +130,17 @@
       "type": "int",
       "defaultValue": 0,
       "metadata": {
-        "description": "This is required so the multi-VM Hadoop Server deployment will return the names of the VMs to the Ambari Server Deployment Script."
+        "description": "This is required so the multi-VM hdf Server deployment will return the names of the VMs to the Ambari Server Deployment Script."
       }
     },
-    "hadoopServerInstances": {
+    "hdfServerInstances": {
       "type": "int",
       "defaultValue": 2,
       "metadata": {
-        "description": "The number of Hadoop Server Instances being deployed."
+        "description": "The number of hdf Server Instances being deployed."
       }
     },
-    "hadoopServerStorageAccountType": {
+    "hdfServerStorageAccountType": {
       "type": "string",
       "defaultValue": "Premium_LRS",
       "allowedValues": [
@@ -150,24 +150,24 @@
         "Standard_ZRS"
       ],
       "metadata": {
-        "description": "The type of the Storage Account(s) being created for the Hadoop Server Instances."
+        "description": "The type of the Storage Account(s) being created for the hdf Server Instances."
       }
     },
-    "hadoopServerAdminUsername": {
+    "hdfServerAdminUsername": {
       "type": "string",
       "defaultValue": "zuadmin",
       "metadata": {
-        "Description": "The Local Username of the account being created on the Hadoop Server Instance."
+        "Description": "The Local Username of the account being created on the hdf Server Instance."
       }
     },
-    "hadoopServerAdminPassword": {
+    "hdfServerAdminPassword": {
       "type": "securestring",
       "defaultValue": "DataMein1@#$",
       "metadata": {
-        "Description": "The Local Password of the account being created on the Hadoop Server Instance."
+        "Description": "The Local Password of the account being created on the hdf Server Instance."
       }
     },
-    "hadoopServerImagePublisher": {
+    "hdfServerImagePublisher": {
       "type": "string",
       "defaultValue": "OpenLogic",
       "allowedValues": [
@@ -175,10 +175,10 @@
         "Canonical"
       ],
       "metadata": {
-        "description": "The Publisher of the Linux Image being used for the Hadoop Server Instance."
+        "description": "The Publisher of the Linux Image being used for the hdf Server Instance."
       }
     },
-    "hadoopServerImageOffer": {
+    "hdfServerImageOffer": {
       "type": "string",
       "defaultValue": "CentOS",
       "allowedValues": [
@@ -186,10 +186,10 @@
         "UbuntuServer"
       ],
       "metadata": {
-        "description": "The Linux Image Offer used for the Hadoop Server Instance."
+        "description": "The Linux Image Offer used for the hdf Server Instance."
       }
     },
-    "hadoopServerImageSku": {
+    "hdfServerImageSku": {
       "type": "string",
       "defaultValue": "6.6",
       "allowedValues": [
@@ -199,10 +199,10 @@
         "16.04-LTS"
       ],
       "metadata": {
-        "description": "The Linux Image SKU used for the Hadoop Server Instance."
+        "description": "The Linux Image SKU used for the hdf Server Instance."
       }
     },
-    "hadoopServerImageVersion": {
+    "hdfServerImageVersion": {
       "type": "string",
       "defaultValue": "latest",
       "allowedValues": [
@@ -212,14 +212,14 @@
         "description": "The Version Number of the fully patched Linux Image being deployed."
       }
     },
-    "hadoopServerDataDiskSize": {
+    "hdfServerDataDiskSize": {
       "type": "int",
       "defaultValue": 50,
       "metadata": {
-        "description": "The Size of the Hadoop Server Instance Data Disk in GB."
+        "description": "The Size of the hdf Server Instance Data Disk in GB."
       }
     },
-    "hadoopServerVMSize": {
+    "hdfServerVMSize": {
       "type": "string",
       "defaultValue": "Standard_DS2_v2",
       "allowedValues": [
@@ -231,7 +231,7 @@
         "Standard_DS4_v2"
       ],
       "metadata": {
-        "description": "The Size of the Hadoop Server Instance VM being deployed in Azure."
+        "description": "The Size of the hdf Server Instance VM being deployed in Azure."
       }
     },
     "deployAmbariServerScriptURI": {
@@ -262,11 +262,11 @@
         "description": "The location of the deployAmbariVM.json ARM Template File."
       }
     },
-    "deployHadoopVMTemplateURI": {
+    "deployhdfVMTemplateURI": {
       "type": "string",
-      "defaultValue": "https://raw.githubusercontent.com/zuuser/templates/master/deployHadoopVMs.json",
+      "defaultValue": "https://raw.githubusercontent.com/zuuser/templates/master/deployHdfVMs.json",
       "metadata": {
-        "description": "The location of the deployHadoopVMs.json ARM Template File."
+        "description": "The location of the deployhdfVMs.json ARM Template File."
       }
     },
     "deployAmbariServerTemplateURI": {
@@ -294,11 +294,11 @@
     "ambariServerName": "[concat(parameters('clientID'), '-ambarisrv-', substring(uniqueString(resourceGroup().id), 0, 2))]",
     "ambariServerOSDiskName": "[concat(variables('ambariServerName'), '-OSDisk')]",
     "ambariServerDataDiskName": "[concat(variables('ambariServerName'), '-DataDisk')]",
-    "hadoopServerPubIPName": "[concat(parameters('clientID'), '-hadoopsrv-', substring(uniqueString(resourceGroup().id), 0, 2))]",
-    "hadoopServerStorageName": "[concat(parameters('clientID'), 'hadoopsrvstr', substring(uniqueString(resourceGroup().id), 0, 4))]",
-    "hadoopServerName": "[concat(parameters('clientID'), '-hadoopsrv-', substring(uniqueString(resourceGroup().id), 0, 2))]",
-    "hadoopServerOSDiskName": "[concat(variables('hadoopServerName'), '-OSDisk')]",
-    "hadoopServerDataDiskName": "[concat(variables('hadoopServerName'), '-DataDisk')]"
+    "hdfServerPubIPName": "[concat(parameters('clientID'), '-hdfsrv-', substring(uniqueString(resourceGroup().id), 0, 2))]",
+    "hdfServerStorageName": "[concat(parameters('clientID'), 'hdfsrvstr', substring(uniqueString(resourceGroup().id), 0, 4))]",
+    "hdfServerName": "[concat(parameters('clientID'), '-hdfsrv-', substring(uniqueString(resourceGroup().id), 0, 2))]",
+    "hdfServerOSDiskName": "[concat(variables('hdfServerName'), '-OSDisk')]",
+    "hdfServerDataDiskName": "[concat(variables('hdfServerName'), '-DataDisk')]"
   },
   "resources": [
     {
@@ -383,17 +383,17 @@
       }
     },
     {
-      "name": "deployHadoopVM-0",
+      "name": "deployhdfVM-0",
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2016-09-01",
-      "comments": "This resource will deploy the First Hadoop Servers and their respective resources.",
+      "comments": "This resource will deploy the First hdf Servers and their respective resources.",
       "dependsOn": [
         "Microsoft.Resources/deployments/deployAmbariVM"
       ],
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "uri": "[parameters('deployHadoopVMTemplateURI')]",
+          "uri": "[parameters('deployhdfVMTemplateURI')]",
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
@@ -403,32 +403,32 @@
           "indexValue": {
             "value": "[parameters('indexValue')]"
           },
-          "hadoopServerStorageAccountType": {
-            "value": "[parameters('hadoopServerStorageAccountType')]"
+          "hdfServerStorageAccountType": {
+            "value": "[parameters('hdfServerStorageAccountType')]"
           },
-          "hadoopServerAdminUsername": {
-            "value": "[parameters('hadoopServerAdminUsername')]"
+          "hdfServerAdminUsername": {
+            "value": "[parameters('hdfServerAdminUsername')]"
           },
-          "hadoopServerAdminPassword": {
-            "value": "[parameters('hadoopServerAdminPassword')]"
+          "hdfServerAdminPassword": {
+            "value": "[parameters('hdfServerAdminPassword')]"
           },
-          "hadoopServerImagePublisher": {
-            "value": "[parameters('hadoopServerImagePublisher')]"
+          "hdfServerImagePublisher": {
+            "value": "[parameters('hdfServerImagePublisher')]"
           },
-          "hadoopServerImageOffer": {
-            "value": "[parameters('hadoopServerImageOffer')]"
+          "hdfServerImageOffer": {
+            "value": "[parameters('hdfServerImageOffer')]"
           },
-          "hadoopServerImageSku": {
-            "value": "[parameters('hadoopServerImageSku')]"
+          "hdfServerImageSku": {
+            "value": "[parameters('hdfServerImageSku')]"
           },
-          "hadoopServerImageVersion": {
-            "value": "[parameters('hadoopServerImageVersion')]"
+          "hdfServerImageVersion": {
+            "value": "[parameters('hdfServerImageVersion')]"
           },
-          "hadoopServerDataDiskSize": {
-            "value": "[parameters('hadoopServerDataDiskSize')]"
+          "hdfServerDataDiskSize": {
+            "value": "[parameters('hdfServerDataDiskSize')]"
           },
-          "hadoopServerVMSize": {
-            "value": "[parameters('hadoopServerVMSize')]"
+          "hdfServerVMSize": {
+            "value": "[parameters('hdfServerVMSize')]"
           },
           "apiVersion": {
             "value": "[parameters('apiVersion')]"
@@ -442,40 +442,40 @@
           "subnetName": {
             "value": "[variables('subnetName')]"
           },
-          "hadoopServerStorageName": {
-            "value": "[variables('hadoopServerStorageName')]"
+          "hdfServerStorageName": {
+            "value": "[variables('hdfServerStorageName')]"
           },
-          "hadoopServerPubIPName": {
-            "value": "[variables('hadoopServerPubIPName')]"
+          "hdfServerPubIPName": {
+            "value": "[variables('hdfServerPubIPName')]"
           },
-          "hadoopServerName": {
-            "value": "[variables('hadoopServerName')]"
+          "hdfServerName": {
+            "value": "[variables('hdfServerName')]"
           },
-          "hadoopServerOSDiskName": {
-            "value": "[variables('hadoopServerOSDiskName')]"
+          "hdfServerOSDiskName": {
+            "value": "[variables('hdfServerOSDiskName')]"
           },
-          "hadoopServerDataDiskName": {
-            "value": "[variables('hadoopServerDataDiskName')]"
+          "hdfServerDataDiskName": {
+            "value": "[variables('hdfServerDataDiskName')]"
           }
         }
       }
     },
     {
-      "name": "[concat('deployHadoopVM-', copyIndex(1))]",
+      "name": "[concat('deployhdfVM-', copyIndex(1))]",
       "type": "Microsoft.Resources/deployments",
       "copy": {
-        "name": "deployAdditionalHadoopVMsLoop",
-        "count": "[sub(parameters('hadoopServerInstances'), 1)]"
+        "name": "deployAdditionalhdfVMsLoop",
+        "count": "[sub(parameters('hdfServerInstances'), 1)]"
       },
       "apiVersion": "2016-09-01",
-      "comments": "This resource will deploy the remaining Hadoop Servers and their respective resources using the copy function and offsetting by 1.",
+      "comments": "This resource will deploy the remaining hdf Servers and their respective resources using the copy function and offsetting by 1.",
       "dependsOn": [
-        "Microsoft.Resources/deployments/deployHadoopVM-0"
+        "Microsoft.Resources/deployments/deployhdfVM-0"
       ],
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "uri": "[parameters('deployHadoopVMTemplateURI')]",
+          "uri": "[parameters('deployhdfVMTemplateURI')]",
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
@@ -485,32 +485,32 @@
           "indexValue": {
             "value": "[copyIndex(1)]"
           },
-          "hadoopServerStorageAccountType": {
-            "value": "[parameters('hadoopServerStorageAccountType')]"
+          "hdfServerStorageAccountType": {
+            "value": "[parameters('hdfServerStorageAccountType')]"
           },
-          "hadoopServerAdminUsername": {
-            "value": "[parameters('hadoopServerAdminUsername')]"
+          "hdfServerAdminUsername": {
+            "value": "[parameters('hdfServerAdminUsername')]"
           },
-          "hadoopServerAdminPassword": {
-            "value": "[parameters('hadoopServerAdminPassword')]"
+          "hdfServerAdminPassword": {
+            "value": "[parameters('hdfServerAdminPassword')]"
           },
-          "hadoopServerImagePublisher": {
-            "value": "[parameters('hadoopServerImagePublisher')]"
+          "hdfServerImagePublisher": {
+            "value": "[parameters('hdfServerImagePublisher')]"
           },
-          "hadoopServerImageOffer": {
-            "value": "[parameters('hadoopServerImageOffer')]"
+          "hdfServerImageOffer": {
+            "value": "[parameters('hdfServerImageOffer')]"
           },
-          "hadoopServerImageSku": {
-            "value": "[parameters('hadoopServerImageSku')]"
+          "hdfServerImageSku": {
+            "value": "[parameters('hdfServerImageSku')]"
           },
-          "hadoopServerImageVersion": {
-            "value": "[parameters('hadoopServerImageVersion')]"
+          "hdfServerImageVersion": {
+            "value": "[parameters('hdfServerImageVersion')]"
           },
-          "hadoopServerDataDiskSize": {
-            "value": "[parameters('hadoopServerDataDiskSize')]"
+          "hdfServerDataDiskSize": {
+            "value": "[parameters('hdfServerDataDiskSize')]"
           },
-          "hadoopServerVMSize": {
-            "value": "[parameters('hadoopServerVMSize')]"
+          "hdfServerVMSize": {
+            "value": "[parameters('hdfServerVMSize')]"
           },
           "apiVersion": {
             "value": "[parameters('apiVersion')]"
@@ -524,23 +524,23 @@
           "subnetName": {
             "value": "[variables('subnetName')]"
           },
-          "hadoopServerPubIPName": {
-            "value": "[variables('hadoopServerPubIPName')]"
+          "hdfServerPubIPName": {
+            "value": "[variables('hdfServerPubIPName')]"
           },
-          "hadoopServerStorageName": {
-            "value": "[variables('hadoopServerStorageName')]"
+          "hdfServerStorageName": {
+            "value": "[variables('hdfServerStorageName')]"
           },
-          "hadoopServerName": {
-            "value": "[variables('hadoopServerName')]"
+          "hdfServerName": {
+            "value": "[variables('hdfServerName')]"
           },
-          "hadoopServerOSDiskName": {
-            "value": "[variables('hadoopServerOSDiskName')]"
+          "hdfServerOSDiskName": {
+            "value": "[variables('hdfServerOSDiskName')]"
           },
-          "hadoopServerDataDiskName": {
-            "value": "[variables('hadoopServerDataDiskName')]"
+          "hdfServerDataDiskName": {
+            "value": "[variables('hdfServerDataDiskName')]"
           },
-          "hadoopServerVMs": {
-            "value": "[reference(concat('deployHadoopVM-', copyIndex())).outputs.result.value]"
+          "hdfServerVMs": {
+            "value": "[reference(concat('deployhdfVM-', copyIndex())).outputs.result.value]"
           }
         }
       }
@@ -551,7 +551,7 @@
       "apiVersion": "2015-01-01",
       "comments": "This resource will deploy the Ambari Server and DNS on the Ambari VM.",
       "dependsOn": [
-        "deployAdditionalHadoopVMsLoop"
+        "deployAdditionalhdfVMsLoop"
       ],
       "properties": {
         "mode": "Incremental",
@@ -575,8 +575,8 @@
           "ambariServerAdminPassword": {
             "value": "[parameters('ambariServerAdminPassword')]"
           },
-          "hadoopServerVMs": {
-            "value": "[reference(concat('deployHadoopVM-', sub(parameters('hadoopServerInstances'), 1))).outputs.result.value]"
+          "hdfServerVMs": {
+            "value": "[reference(concat('deployhdfVM-', sub(parameters('hdfServerInstances'), 1))).outputs.result.value]"
           },
           "domainName": {
             "value": "[parameters('domainName')]"

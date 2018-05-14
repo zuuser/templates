@@ -138,15 +138,9 @@ yum install ambari-server -y
 # Running setup of the Ambari Server.
 ambari-server setup -s
 
-# Starting the Ambari Server.
-ambari-server start
 
 #-----------------------------------------
 # HDF-specific
-
-# Start Sleep for 60 seconds.
-echo "Pausing for 60 seconds while the Ambari Server is starting."
-sleep 60s
 
 # Back up the Ambari resources folder
 cp -r /var/lib/ambari-server/resources /var/lib/ambari-server/resources.backup
@@ -157,13 +151,10 @@ wget -nv http://public-repo-1.hortonworks.com/HDF/centos6/3.x/updates/3.1.1.0/ta
 # Install
 ambari-server install-mpack --mpack=/tmp/hdf-ambari-mpack-3.1.1.0-35.tar.gz --purge --verbose -y
 
-# Restarting the Ambari Server.
-ambari-server restart
-
-# Start Sleep for 60 seconds.
-echo "Pausing for 60 seconds while the Ambari Server is restarting."
-sleep 60s
 #-----------------------------------------
+
+# Starting the Ambari Server.
+ambari-server start
 
 
 # Checking if SSH Key already exists.

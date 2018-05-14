@@ -358,6 +358,20 @@
               "direction": "Inbound"
             }
           },
+		   {
+            "name": "allow-solr-admin-ui-inbound",
+            "properties": {
+              "description": "Allow Solr Admin UI traffic through port 8886.",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "8886",
+              "sourceAddressPrefix": "*",
+              "destinationAddressPrefix": "[concat(parameters('subnetPrefix'))]",
+              "access": "Allow",
+              "priority": 170,
+              "direction": "Inbound"
+            }
+          },
           {
             "name": "allow-active-mq-inbound",
             "properties": {

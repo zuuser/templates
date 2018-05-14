@@ -386,6 +386,34 @@
               "direction": "Inbound"
             }
           },
+		  {
+            "name": "allow-kafka-ambari-inbound",
+            "properties": {
+              "description": "Allow Kafka traffic through port  6667.",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "6667",
+              "sourceAddressPrefix": "*",
+              "destinationAddressPrefix": "[concat(parameters('subnetPrefix'))]",
+              "access": "Allow",
+              "priority": 122,
+              "direction": "Inbound"
+            }
+          },
+		  {
+            "name": "allow-kafka-inbound",
+            "properties": {
+              "description": "Allow Kafka traffic through port  9092.",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "9092",
+              "sourceAddressPrefix": "*",
+              "destinationAddressPrefix": "[concat(parameters('subnetPrefix'))]",
+              "access": "Allow",
+              "priority": 123,
+              "direction": "Inbound"
+            }
+          },
           {
             "name": "allow-active-mq-inbound",
             "properties": {

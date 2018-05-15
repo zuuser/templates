@@ -149,7 +149,7 @@ cp -r /var/lib/ambari-server/resources /var/lib/ambari-server/resources.backup
 wget -nv http://public-repo-1.hortonworks.com/HDF/centos6/3.x/updates/3.1.1.0/tars/hdf_ambari_mp/hdf-ambari-mpack-3.1.1.0-35.tar.gz -O /tmp/hdf-ambari-mpack-3.1.1.0-35.tar.gz
 
 # Install
-ambari-server install-mpack --mpack=/tmp/hdf-ambari-mpack-3.1.1.0-35.tar.gz --purge --verbose -y
+yes | ambari-server install-mpack --mpack=/tmp/hdf-ambari-mpack-3.1.1.0-35.tar.gz --purge
 
 #-----------------------------------------
 

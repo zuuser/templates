@@ -470,6 +470,20 @@
               "direction": "Inbound"
             }
           },
+		   {
+            "name": "allow-atlas-dashboard-inbound",
+            "properties": {
+              "description": "Allow Atlas Dashboard traffic through port 21000.",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "21000",
+              "sourceAddressPrefix": "*",
+              "destinationAddressPrefix": "[concat(parameters('subnetPrefix'))]",
+              "access": "Allow",
+              "priority": 131,
+              "direction": "Inbound"
+            }
+          },
           {
             "name": "allow-active-mq-inbound",
             "properties": {

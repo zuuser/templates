@@ -484,6 +484,62 @@
               "direction": "Inbound"
             }
           },
+		  {
+            "name": "allow-oozie-server-inbound",
+            "properties": {
+              "description": "Allow Oozie Server traffic through port 11000.",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "11000",
+              "sourceAddressPrefix": "*",
+              "destinationAddressPrefix": "[concat(parameters('subnetPrefix'))]",
+              "access": "Allow",
+              "priority": 132,
+              "direction": "Inbound"
+            }
+          },
+		   {
+            "name": "allow-hive2server-inbound",
+            "properties": {
+              "description": "Allow Hive2Server traffic through port 10000.",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "10000",
+              "sourceAddressPrefix": "*",
+              "destinationAddressPrefix": "[concat(parameters('subnetPrefix'))]",
+              "access": "Allow",
+              "priority": 133,
+              "direction": "Inbound"
+            }
+          },
+		   {
+            "name": "allow-hbase-inbound",
+            "properties": {
+              "description": "Allow HBase traffic through port 16000.",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "16000",
+              "sourceAddressPrefix": "*",
+              "destinationAddressPrefix": "[concat(parameters('subnetPrefix'))]",
+              "access": "Allow",
+              "priority": 134,
+              "direction": "Inbound"
+            }
+          },
+		   {
+            "name": "allow-livy-inbound",
+            "properties": {
+              "description": "Allow Livy traffic through port 8998.",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "8998-8999",
+              "sourceAddressPrefix": "*",
+              "destinationAddressPrefix": "[concat(parameters('subnetPrefix'))]",
+              "access": "Allow",
+              "priority": 135,
+              "direction": "Inbound"
+            }
+          },
           {
             "name": "allow-active-mq-inbound",
             "properties": {

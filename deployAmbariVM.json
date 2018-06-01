@@ -540,6 +540,20 @@
               "direction": "Inbound"
             }
           },
+		   {
+            "name": "allow-logsearch-ui-inbound",
+            "properties": {
+              "description": "Allow Log Search UI traffic through port 61888.",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "61888",
+              "sourceAddressPrefix": "*",
+              "destinationAddressPrefix": "[concat(parameters('subnetPrefix'))]",
+              "access": "Allow",
+              "priority": 136,
+              "direction": "Inbound"
+            }
+          },
           {
             "name": "allow-active-mq-inbound",
             "properties": {

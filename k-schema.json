@@ -1,0 +1,16 @@
+{
+   "type" : "record",
+   "namespace" : "com.zurich.iot",
+   "name" : "TelemetricsData",
+   "fields" : [
+      { "name" : "timestamp_raw" , "type" : "string" },
+      { "name" : "building" , "type" : "string" },
+      { "name" : "sensor" , "type" : "string" },
+      { "name" : "status" , "type" : "string" },
+      { "name" : "value" , "type" : "string" },
+      { "name" : "path" , "type" : "string" },
+      { "name" : "_input_file_read_date" , "type" : "timestamp" },
+      { "name" : "_input_file_name" , "type" : "string" },
+      { "name" : "_input_line" , "type" : "int" }
+   ]
+}
